@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CurrencyService } from '../shared/header/currency.service';
 
 @Component({
   selector: 'app-converter',
@@ -11,7 +12,8 @@ export class ConverterComponent implements OnInit {
   form!: FormGroup
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private currencyService: CurrencyService
   ) { }
 
   ngOnInit(): void {

@@ -43,7 +43,13 @@
 		border-radius: 10%;
 	}
 
-	&__title {}
+	&__title {
+		color: #000;
+		font-weight: 700;
+	}
 
-	&__value {}
+	&__value {
+		color: #fff;
+		font-weight: 700;
+	}
 }
