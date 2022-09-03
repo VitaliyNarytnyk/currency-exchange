@@ -1,9 +1,10 @@
 <div class="converter">
+	<h1>I want to convert ...</h1>
 	<form class="converter__form" [formGroup]="form">
 		<div class="converter__row">
 			<div class="converter__value">
 				<label for="name">From:</label>
-				<select class="converter__select">
+				<select class="converter__select" formControlName="from" (change)="selected($event, 'from')">
 					<option value="UAH">UAH — Ukrainian hryvnia</option>
 					<option value="USD">USD — United States dollar</option>
 					<option value="EUR">EUR — Euro</option>
@@ -11,18 +12,18 @@
 				</select>
 			</div>
 			<div class="converter__amount">
-				<input id="input" type="number" class="converter__input" />
+				<input id="input" type="number" class="converter__input" formControlName="amountFrom" />
 			</div>
 		</div>
 
 		<div class="converter__buttons">
-			<button class="converter__btn" type="button">&#8644;</button>
+			<button class="converter__btn" type="button" (click)="changeSelect(form)">&#8644;</button>
 		</div>
 
 		<div class="converter__row">
 			<div class="converter__value">
 				<label for="name">To:</label>
-				<select class="converter__select">
+				<select class="converter__select" formControlName="to" (change)="selected($event, 'to')">
 					<option value="UAH">UAH — Ukrainian hryvnia</option>
 					<option value="USD">USD — United States dollar</option>
 					<option value="EUR">EUR — Euro</option>
@@ -30,7 +31,7 @@
 				</select>
 			</div>
 			<div class="converter__amount">
-				<input id="input" type="number" class="converter__input" />
+				<input id="input" type="number" class="converter__input" formControlName="amountTo" />
 			</div>
 		</div>
 
