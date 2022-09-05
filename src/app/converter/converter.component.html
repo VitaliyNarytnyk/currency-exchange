@@ -37,6 +37,9 @@
 			</div>
 		</div>
 	</form>
+	<div *ngIf="loading">
+		<img class="converter__loading" src="../../assets/img/loading.gif" alt="">
+	</div>
 	<div *ngIf="show==1">
 		<div><small>Press ENTER to convert</small></div>
 	</div>

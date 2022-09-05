@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Subscribable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { CurrencyService } from '../shared/header/currency.service';
+import { ConvertResponse } from '../shared/interfaces';
 
 @Component({
   selector: 'app-converter',
@@ -21,6 +22,8 @@ export class ConverterComponent implements OnInit, OnDestroy {
   convertSub!: Subscription
 
   show!: number
+
+  loading: boolean = false
 
   constructor(
     private formBuilder: FormBuilder,
@@ -92,7 +95,10 @@ export class ConverterComponent implements OnInit, OnDestroy {
 
     console.log('DATA', data)
 
-    this.convertSub = this.currencyService.convert(data).subscribe(response => {
+    this.loading = true
+
+    this.convertSub = this.currencyService.convert(data).subscribe((response: ConvertResponse) => {
+      this.loading = false
       if (side == 'from') {
         this.form.controls['amountTo'].patchValue(response.result)
       } else {
