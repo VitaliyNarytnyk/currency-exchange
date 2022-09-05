@@ -22,7 +22,7 @@
 		}
 	}
 
-	img {
+	&__logo-icon {
 		padding: 8px;
 		border: 2px solid #fff;
 		border-radius: 50%;
@@ -42,7 +42,14 @@
 		border-radius: 10%;
 	}
 
+	&__flag-icon {
+		width: 17px;
+		margin-right: 5px;
+	}
+
 	&__title {
+		display: flex;
+		align-items: center;
 		color: #000;
 		font-weight: 700;
 	}

@@ -13,7 +13,7 @@
 			</div>
 			<div class="converter__amount">
 				<input id="input" type="number" class="converter__input" formControlName="amountFrom"
-					(keyup.enter)="convert($event, 'from')" />
+					(keyup.enter)="convert($event, 'from')" (mouseenter)="show=1" (mouseleave)="show=0" />
 			</div>
 		</div>
 
@@ -33,9 +33,11 @@
 			</div>
 			<div class="converter__amount">
 				<input id="input" type="number" class="converter__input" formControlName="amountTo"
-					(keyup.enter)="convert($event, 'to')" />
+					(keyup.enter)="convert($event, 'to')" (mouseenter)="show=1" (mouseleave)="show=0" />
 			</div>
 		</div>
-
 	</form>
+	<div *ngIf="show==1">
+		<div><small>Press ENTER to convert</small></div>
+	</div>
 </div>

@@ -20,6 +20,8 @@ export class ConverterComponent implements OnInit, OnDestroy {
 
   convertSub!: Subscription
 
+  show!: number
+
   constructor(
     private formBuilder: FormBuilder,
     public currencyService: CurrencyService

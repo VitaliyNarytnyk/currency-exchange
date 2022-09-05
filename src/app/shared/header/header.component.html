@@ -1,20 +1,29 @@
 <nav class="currency">
 	<div class="currency__logo">
-		<img src="../../../assets/img/currency-logo.svg" alt="">
+		<img class="currency__logo-icon" src="../../../assets/img/logo/currency-logo.svg" alt="">
 		<p>Currency <span>Exchange</span></p>
 	</div>
 
 	<div class="currency__rates">
 		<div class="currency__card">
-			<div class="currency__title">{{ baseUSD }}</div>
+			<div class="currency__title">
+				<img class="currency__flag-icon" src="../../../assets/img/flags/united-states.png" alt="">
+				{{ baseUSD }}
+			</div>
 			<div class="currency__value" data-value="USD">{{ USD }}</div>
 		</div>
 		<div class="currency__card">
-			<div class="currency__title">{{ baseEUR }}</div>
+			<div class="currency__title">
+				<img class="currency__flag-icon" src="../../../assets/img/flags/european-union.png" alt="">
+				{{ baseEUR }}
+			</div>
 			<div class="currency__value" data-value="EUR">{{ EUR }}</div>
 		</div>
 		<div class="currency__card">
-			<div class="currency__title">{{ basePLN }}</div>
+			<div class="currency__title">
+				<img class="currency__flag-icon" src="../../../assets/img/flags/poland.png" alt="">
+				{{ basePLN }}
+			</div>
 			<div class="currency__value" data-value="PLN">{{ PLN }}</div>
 		</div>
 	</div>
