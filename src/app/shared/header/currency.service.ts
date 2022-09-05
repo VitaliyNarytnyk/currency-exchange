@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { RatesResponse } from "../interfaces";
+import { ConvertResponse, RatesResponse } from "../interfaces";
 
 @Injectable({ providedIn: 'root' })
 
@@ -27,6 +27,16 @@ export class CurrencyService {
 
 	getRatePLN(): Observable<RatesResponse> {
 		return this.http.get<RatesResponse>(`https://api.apilayer.com/exchangerates_data/latest?symbols=UAH&base=PLN`, this.requestOptions)
+	}
+
+	convert(data: {
+		from: string;
+		to: string;
+		amountTo: string;
+		amountFrom: string;
+	}): Observable<ConvertResponse> {
+
+		return this.http.get<ConvertResponse>(`http://api.apilayer.com/exchangerates_data/convert?to=${data.to}&from=${data.from}&amount=${data.amountFrom}`, this.requestOptions)
 	}
 
 }

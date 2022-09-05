@@ -12,7 +12,8 @@
 				</select>
 			</div>
 			<div class="converter__amount">
-				<input id="input" type="number" class="converter__input" formControlName="amountFrom" />
+				<input id="input" type="number" class="converter__input" formControlName="amountFrom"
+					(keyup.enter)="convert($event, 'from')" />
 			</div>
 		</div>
 
@@ -31,7 +32,8 @@
 				</select>
 			</div>
 			<div class="converter__amount">
-				<input id="input" type="number" class="converter__input" formControlName="amountTo" />
+				<input id="input" type="number" class="converter__input" formControlName="amountTo"
+					(keyup.enter)="convert($event, 'to')" />
 			</div>
 		</div>
 

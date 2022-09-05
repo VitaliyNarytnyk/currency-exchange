@@ -4,3 +4,7 @@ export interface RatesResponse {
 		UAH: number
 	}
 }
+
+export interface ConvertResponse {
+	result: number
+}
